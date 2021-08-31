@@ -1,22 +1,48 @@
-// var, const & let
- {// isso é um escopo, abre e fecha chaves
-  const car = "fusca";
-}
+const numbers = [1, 2, 3, 4, 5];
 
-console.log(car) /* vai dar erro pois o const 
-deixa o car isolado no escopo */
+numbers.forEach(function (number, index) {
+  numbers[index] = number + 1;
+});
 
-// var, const & let
-const person = { name: "Yun"};
+const newNumbers = numbers.map(function (number) {
+  return number + 1;
+});
 
-person.name = "Olivia"
+const total = numbers.reduce(function (total, next) {
+  return total + next; // 0 + 1, 1 + 2
+});
 
-console.log(person)// mutabilidade
+console.log(total);
+console.log(newNumbers);
+console.log(numbers);
 
-// dar preferência sempre ao const por tornar o código mais seguro
-// var, const & let
-for (let index = 0; index < 10; index++) {
- console.log(index);
-}
+const todos = [
+  { text: "Lavar a louça", done: false },
+  { text: "Apanhar a lixo", done: true },
+  { text: "Dobrar as roupas", done: true },
+];
 
-console.log(index)
+const doneTodos = todos.filter(function (todo) {
+  return todo.text === "Dobrar as roupas";
+});
+
+console.log(doneTodos);
+
+const find = todos.find(function (todo) {
+  return todo.text === "Dobrar as roupas";
+});
+
+console.log(find);
+
+const index = todos.findIndex(function (todo) {
+  return todo.text === "Dobrar as roupas";
+});
+
+console.log(index);
+
+const cars = ["fusca", "civic", "hb20"];
+const hasFusca = cars.some(function (car) {
+  return car === "fusca";
+});
+
+console.log(hasFusca);
