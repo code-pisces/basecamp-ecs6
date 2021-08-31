@@ -1,26 +1,8 @@
 "use strict";
 
-var todos = [{
-  text: "Lavar a louça",
-  done: false
-}, {
-  text: "Apanhar a lixo",
-  done: true
-}, {
-  text: "Dobrar as roupas",
-  done: true
-}];
-var doneTodos = todos.filter(function (todo) {
-  return todo.text === "Dobrar as roupas";
-});
-console.log(doneTodos);
-/*
-function anything() {
-  console.log(doneTodos);
-}*/
-
-var anything = function anything() {
-  return {
-    name: "Yung"
-  };
+var sayHello = function sayHello() {
+  var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "Fulano";
+  return console.log("Olá " + name);
 };
+
+sayHello();
